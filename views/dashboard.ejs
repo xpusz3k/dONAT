@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLS DONATE - DASHBOARD</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="shortcut icon" href="../logo.png" type="image/x-icon">
+</head>
+<body>
+
+    <nav>
+        <header>DonationAPP</header>
+        <div class="login">
+            <a href="/">WRÓĆ</a>
+        </div>
+    </nav>
+
+    <div id="app" class="dashboard">
+        <div class="content" id="dashboard_boxes">
+            <div class="box">
+                <div class="top">
+                    <i class="fas fa-wallet"></i>
+                </div>
+                <div class="naming">
+                    <span>Wykres Zakupów</span>
+                </div>
+            </div>
+            <div class="box">
+                <div class="top">
+                    <i class="fas fa-rectangle-ad"></i>
+                </div>
+                <div class="naming">
+                    <span>Reklamy</span>
+                </div>
+            </div>
+            <div class="box">
+                <div class="top">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <div class="naming">
+                    <span>Status Strony</span>
+                </div>
+            </div>
+        </div>
+        <div class="orders-list">
+            <div class="orders-heading">
+                <h2>PRZEGLĄDAJ LISTĘ ZAKUPÓW</h2>
+            </div>
+        </div>
+    
+        <div class="maintenance-list">
+            <div class="maintenance-heading">
+                <h2>ZARZĄDZAJ STATUSEM STRONY</h2>
+            </div>
+            <div class="maintenance-box">
+                <a></a>
+            </div>
+        </div>
+
+        <div class="ads-list">
+            <div class="ads-heading">
+                <h2>DODAJ REKLAMY</h2>
+            </div>
+            <div class="ads-create">
+                <form id="ads-form">
+                    <div>
+                        <p>Dodaj tekst reklamy</p>
+                        <input type="text" name="text" placeholder="Wpisz tekst..." maxlength="20" id="textInput" autocomplete="off">
+                    </div>
+                    <div>
+                        <p>Wybierz zdjęcie reklamy</p>
+                        <input type="text" id="imageInput" name="image" placeholder="Wklej link obrazu" autocomplete="off">
+                    </div>
+                    <div>
+                        <button type="submit">POTWIERDŹ</button>
+                    </div>
+                </form>
+            </div>
+            <div class="ads-heading">
+                <h2>USUŃ REKLAMY</h2>
+            </div>
+            <div class="ads"></div>
+        </div>
+    </div>
+
+    <script src="../dashboard.js"></script>
+    
+</body>
+</html>

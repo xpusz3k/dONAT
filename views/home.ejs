@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLS DONATE</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="shortcut icon" href="../logo.png" type="image/x-icon">
+</head>
+<body>
+
+    <nav>
+        <header>DonationAPP</header>
+        <div class="login">
+            <a href="/login">ZALOGUJ</a>
+        </div>
+    </nav>
+
+    <div id="app">
+        <div class="container">
+            <div class="content">
+                <div class="top">
+                    <div class="img">
+                        <img src="../logo.png" alt="">
+                    </div>
+                </div>
+                <div class="user_info">
+                    <h1> <%= username %> </h1>
+                    <p>Code creator - DAJSONEKK</p>
+                </div>
+                <div class="pagination">
+                    <button id="pagination-box" class="active"></button>
+                    <button id="pagination-box"></button>
+                </div>
+                <div class="page-first show">
+                    <div class="input">
+                        <p>Wpisz swój nick</p>
+                        <input type="text" id="input-name" maxlength="12">
+                    </div>
+                    <div class="input">
+                        <p>Twoja wiadomość</p>
+                        <textarea id="input-message" maxlength="200"></textarea>
+                    </div>
+                    <div class="input">
+                        <button id="continue">Dalej <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div class="page-second">
+                    <div class="payment-value">
+                        <input id="payment-input-value" type="number" placeholder="Kwota minimum 1,00zł">
+                    </div>
+                    <div class="payment-selection">
+                        <p>Wybierz sposób płatności</p>
+                        <div class="selection">
+                            <div class="payment-box active">
+                                <div class="checkbox"><i class="fas fa-check"></i></div>
+                                <span>Jednorazowo</span>
+                            </div>
+                            <div class="payment-box">
+                                <div class="checkbox"><i class="fas fa-check"></i></div>
+                                <span>Subskrybcja</span>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="payment-confirm">
+                        <button id="payment-button" type="submit">Donate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="banners-slider"></div>
+    </div>
+
+    <div class="maintenance-break">
+        <div>
+            <p>Aktualnie trwa przerwa techniczna...</p>
+            <span>Prosimy o cierpliwość <i class="fas fa-face-sad-cry"></i></span>
+        </div>
+    </div>    
+    
+    <script src="../script.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+</body>
+</html>

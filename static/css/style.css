@@ -1,0 +1,890 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+  list-style: none;
+  border: none;
+  outline: none;
+  transition: 0.2s linear;
+}
+
+html,
+body {
+  background: #fff;
+  height: 100%;
+}
+
+nav {
+  height: 64px;
+  width: 100%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 2px solid #f2f2f2;
+  position: fixed;
+  background: #fff;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+nav header {
+  font-weight: 600;
+  font-size: 24px;
+  color: #292929;
+}
+nav .login {
+  width: -webkit-fill-available;
+  text-align: right;
+}
+nav .login a {
+  height: 24px;
+  padding: 0px 9px;
+  border-radius: 4px;
+  color: #9447fd;
+  text-decoration: none;
+  cursor: pointer;
+  background: #fff;
+  font-weight: 600;
+  font-size: 14px;
+}
+nav .login a:hover {
+  color: #672dca;
+  background: #f8f8f8;
+}
+
+.maintenance-break {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: none;
+}
+.maintenance-break.active {
+  display: flex;
+}
+.maintenance-break div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.maintenance-break div p {
+  color: #0f0f0f;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.maintenance-break div span {
+  color: #9447fd;
+  font-weight: 500;
+}
+
+#app {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0;
+  position: relative;
+  top: 64px;
+}
+#app .login {
+  background: #0a1128;
+  height: fit-content;
+  width: 405px;
+  margin-top: 128px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+}
+#app .login .top img {
+  height: 64px;
+}
+#app .login .top_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#app .login .top_info h2 {
+  color: #9447fd;
+  font-weight: 700;
+  margin-top: 16px;
+}
+#app .login .top_info p {
+  color: #bfbfbf;
+  font-weight: 500;
+  font-size: 12px;
+}
+#app .login form {
+  margin-top: 16px;
+  width: 100%;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+}
+#app .login form div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+#app .login form div input {
+  padding: 9px 13px;
+  border-radius: 4px;
+  background: #fff;
+  width: 100%;
+  color: #9447fd;
+  font-weight: 600;
+  border: 2px solid transparent;
+}
+#app .login form div input::placeholder {
+  color: #672dca;
+}
+#app .login form div input:focus {
+  border: 2px solid #9447fd;
+}
+#app .login form div input[type=file] {
+  display: none;
+}
+#app .login form div i {
+  position: absolute;
+  right: 8px;
+  color: #f8f8f8;
+  bottom: 8px;
+  cursor: pointer;
+}
+#app .login form div span {
+  color: #f8f8f8;
+  font-weight: 500;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+#app .login form button {
+  width: 100%;
+  background: #9447fd;
+  height: 42px;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+#app .login form button:hover {
+  border-radius: 8px;
+  background: #672dca;
+  border: 2px solid #672dca;
+}
+#app .login form p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  color: #f8f8f8;
+  font-weight: 600;
+}
+#app .login form p span {
+  color: #9447fd;
+  cursor: pointer;
+}
+#app .login form p span:hover {
+  color: #672dca;
+}
+#app .banners-slider {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  width: 400px;
+  height: 96px;
+  margin-top: 16px;
+  overflow-x: auto;
+}
+#app .banners-slider .banner {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 4px;
+  background: url(https://brandactive.pl/wp-content/uploads/2020/11/allegro.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #9447fd;
+}
+#app .banners-slider .banner span {
+  color: #9447fd;
+  font-weight: 600;
+  font-size: 22px;
+  text-shadow: 4px 4px 6px rgb(66, 68, 90);
+  backdrop-filter: blur(2px);
+  padding: 0 9px;
+  border-radius: 8px;
+}
+#app.dashboard {
+  height: calc(100% - 64px);
+}
+#app.dashboard .ads-list {
+  display: none;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  padding: 16px;
+  align-items: center;
+  position: relative;
+  top: 48px;
+  height: 0;
+}
+#app.dashboard .ads-list.show {
+  display: flex;
+}
+#app.dashboard .ads-list .ads-heading {
+  border-bottom: 2px solid #f2f2f2;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-align: center;
+}
+#app.dashboard .ads-list .ads-heading h2 {
+  color: #0f0f0f;
+}
+#app.dashboard .ads-list .ads-create form {
+  background: rgba(148, 71, 253, 0.062745098);
+  border: 2px solid #9447fd;
+  border-radius: 4px;
+  width: 464px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+#app.dashboard .ads-list .ads-create form div p {
+  color: #0f0f0f;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+#app.dashboard .ads-list .ads-create form div input {
+  padding: 9px 13px;
+  border-radius: 4px;
+  background: #fff;
+  width: 100%;
+  color: #9447fd;
+  font-weight: 500;
+  border: 2px solid transparent;
+}
+#app.dashboard .ads-list .ads-create form div input::placeholder {
+  color: #672dca;
+}
+#app.dashboard .ads-list .ads-create form div input:focus {
+  border: 2px solid #9447fd;
+}
+#app.dashboard .ads-list .ads-create form div input[type=file] {
+  display: none;
+}
+#app.dashboard .ads-list .ads-create form div button {
+  width: 100%;
+  background: #fff;
+  height: 42px;
+  color: #9447fd;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+#app.dashboard .ads-list .ads-create form div button:hover {
+  border-radius: 8px;
+  background: #f8f8f8;
+  border: 2px solid #9447fd;
+}
+#app.dashboard .ads-list .ads {
+  padding-bottom: 16px;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+#app.dashboard .ads-list .ads .ad {
+  width: 400px;
+  height: 96px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+  position: relative;
+}
+#app.dashboard .ads-list .ads .ad span {
+  color: #9447fd;
+  font-weight: 600;
+  font-size: 22px;
+  text-shadow: 4px 4px 6px rgb(66, 68, 90);
+  backdrop-filter: blur(2px);
+  padding: 0 9px;
+  border-radius: 8px;
+}
+#app.dashboard .ads-list .ads .ad:hover {
+  filter: brightness(0.9);
+  transform: scale(1.025);
+}
+#app.dashboard .ads-list .ads .ad:hover button {
+  opacity: 1;
+}
+#app.dashboard .ads-list .ads .ad button {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  opacity: 0;
+  border-radius: 100%;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  background: transparent;
+}
+#app.dashboard .ads-list .ads .ad button:hover {
+  background: #fff;
+}
+#app.dashboard .ads-list .ads .ad button:hover i {
+  color: #9447fd;
+}
+#app.dashboard .ads-list .ads .ad button i {
+  color: #fff;
+  font-size: 16px;
+}
+#app.dashboard .maintenance-list {
+  display: none;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  padding: 32px;
+  align-items: center;
+  position: relative;
+  top: 48px;
+  height: 0;
+}
+#app.dashboard .maintenance-list.show {
+  display: flex;
+}
+#app.dashboard .maintenance-list .maintenance-heading {
+  border-bottom: 2px solid #f2f2f2;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-align: center;
+}
+#app.dashboard .maintenance-list .maintenance-heading h2 {
+  color: #0f0f0f;
+}
+#app.dashboard .maintenance-list .maintenance-box {
+  min-height: 42px;
+  width: 96px;
+  border-radius: 99px;
+  background: #bfbfbf;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  cursor: pointer;
+}
+#app.dashboard .maintenance-list .maintenance-box.active {
+  background: #9447fd;
+}
+#app.dashboard .maintenance-list .maintenance-box.active a {
+  transform: translateX(calc(100% + 16px));
+}
+#app.dashboard .maintenance-list .maintenance-box a {
+  height: 32px;
+  width: 32px;
+  border-radius: 100%;
+  background: #fff;
+}
+#app.dashboard .orders-list {
+  display: none;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  padding: 32px;
+  align-items: center;
+  position: relative;
+  top: 48px;
+  height: 0;
+}
+#app.dashboard .orders-list.show {
+  display: flex;
+}
+#app.dashboard .orders-list .orders-heading {
+  border-bottom: 2px solid #f2f2f2;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-align: center;
+}
+#app.dashboard .orders-list .orders-heading h2 {
+  color: #0f0f0f;
+}
+#app.dashboard .orders-list .order {
+  height: 96px;
+  width: 70%;
+  border-radius: 4px;
+  background: #ecdeff;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  gap: 16px;
+  border: 2px solid #9447fd;
+  cursor: pointer;
+}
+#app.dashboard .orders-list .order:hover {
+  transform: scale(1.025);
+  background: #e3cffe;
+}
+#app.dashboard .orders-list .order .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#app.dashboard .orders-list .order .left i {
+  color: #9447fd;
+  font-size: 24px;
+}
+#app.dashboard .orders-list .order .right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 48px;
+}
+#app.dashboard .orders-list .order .right .nickname {
+  width: 200px;
+}
+#app.dashboard .orders-list .order .right .nickname span {
+  color: #0f0f0f;
+  font-weight: 600;
+  cursor: text;
+}
+#app.dashboard .orders-list .order .right .message {
+  width: 100%;
+  overflow-y: auto;
+  position: relative;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+#app.dashboard .orders-list .order .right .message span {
+  width: 100%;
+  width: 100%;
+  color: #969696;
+  cursor: text;
+}
+#app.dashboard .orders-list .order .right .value span {
+  color: #0f0f0f;
+  font-weight: 600;
+  width: max-content;
+  display: flex;
+  cursor: text;
+}
+#app.dashboard .content {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#app.dashboard .content .box {
+  width: 256px;
+  height: 164px;
+  cursor: pointer;
+}
+#app.dashboard .content .box.hide {
+  display: none;
+}
+#app.dashboard .content .box:hover .top {
+  background: #e6d4ff;
+}
+#app.dashboard .content .box .top {
+  background: #ecdeff;
+  height: 128px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#app.dashboard .content .box .top i {
+  color: #b179fe;
+  font-size: 2rem;
+}
+#app.dashboard .content .box .naming {
+  text-align: center;
+  margin-top: 8px;
+}
+#app.dashboard .content .box .naming span {
+  color: #0f0f0f;
+  font-weight: 500;
+}
+#app .container {
+  background: #fff;
+  height: fit-content;
+  width: 640px;
+  box-shadow: 0 0 21px 0 rgba(0, 0, 0, 0.17);
+  border-radius: 20px;
+  border: 2px solid #9447fd;
+}
+#app .container .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+#app .container .content .top {
+  border-radius: 10px;
+  height: 134px;
+  width: 100%;
+  background: rgba(148, 71, 253, 0.062745098);
+  display: flex;
+  justify-content: center;
+}
+#app .container .content .top .img {
+  transform: translateY(100%);
+  background: #fff;
+  height: 90px;
+  width: 90px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app .container .content .top .img img {
+  height: 80px;
+  border-radius: 100%;
+}
+#app .container .content .user_info {
+  padding: 20px 15px;
+  background-color: rgba(148, 71, 253, 0.062745098);
+  text-align: center;
+  border-radius: 20px;
+  width: 520px;
+  margin: 65px auto 25px;
+}
+#app .container .content .user_info h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #030303;
+  margin: 0 0 5px;
+}
+#app .container .content .user_info p {
+  font-size: 12px;
+  color: #969696;
+  margin: 0;
+  text-transform: uppercase;
+}
+#app .container .content .pagination {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin: 0 0 20px;
+}
+#app .container .content .pagination button {
+  height: 15px;
+  width: 15px;
+  background: #f0f0f0;
+  border-radius: 100%;
+  cursor: pointer;
+}
+#app .container .content .pagination button.active {
+  background: #9447fd;
+}
+#app .container .content .page-first {
+  width: 365px;
+  display: flex;
+  flex-direction: column;
+  display: none;
+}
+#app .container .content .page-first.show {
+  display: block;
+}
+#app .container .content .page-first .input {
+  margin: 0 0 15px;
+}
+#app .container .content .page-first .input p {
+  margin: 0 0 10px;
+  font-size: 16px;
+  color: #0f0f0f;
+  text-align: left;
+}
+#app .container .content .page-first .input input {
+  height: 45px;
+  font-size: 15px;
+  width: 100%;
+  padding: 15px 20px;
+  background-color: #fff;
+  border: 1px solid #bfbfbf;
+  border-radius: 3px;
+}
+#app .container .content .page-first .input textarea {
+  height: 135px;
+  width: 100%;
+  font-size: 12px;
+  resize: none;
+  padding: 15px 20px;
+  background-color: #fff;
+  border: 1px solid #bfbfbf;
+  border-radius: 3px;
+}
+#app .container .content .page-first .input button {
+  width: 135px;
+  margin: 0 15px;
+  padding: 10px 15px;
+  border-radius: 14px;
+  border: 1px solid #9447fd;
+  background-color: #9447fd;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+}
+#app .container .content .page-first .input button:hover {
+  background: #672dca;
+}
+#app .container .content .page-second {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#app .container .content .page-second.show {
+  display: flex;
+}
+#app .container .content .page-second .payment-value {
+  width: 300px;
+  border-bottom: 2px solid #f8f8f8;
+  padding-bottom: 24px;
+}
+#app .container .content .page-second .payment-value input {
+  height: 45px;
+  font-size: 14px;
+  width: calc(100% - 20px);
+  padding: 15px 20px;
+  font-weight: 500;
+  background-color: #fff;
+  border: 1px solid #bfbfbf;
+  border-radius: 3px;
+}
+#app .container .content .page-second .payment-selection p {
+  margin: 25px 0;
+  color: #969696;
+  font-weight: 400;
+  font-size: 15px;
+}
+#app .container .content .page-second .payment-selection .selection {
+  width: 445px;
+  display: grid;
+  grid-gap: 20px 30px;
+  grid-template-columns: repeat(2, 1fr);
+}
+#app .container .content .page-second .payment-selection .selection .payment-box {
+  padding: 15px 20px;
+  border: 1px solid #e9e9e9;
+  border-radius: 20px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+#app .container .content .page-second .payment-selection .selection .payment-box.active, #app .container .content .page-second .payment-selection .selection .payment-box:hover {
+  background-color: #9447fd;
+  border-color: #672dca;
+}
+#app .container .content .page-second .payment-selection .selection .payment-box.active span, #app .container .content .page-second .payment-selection .selection .payment-box:hover span {
+  color: #fff;
+}
+#app .container .content .page-second .payment-selection .selection .payment-box.active .checkbox, #app .container .content .page-second .payment-selection .selection .payment-box:hover .checkbox {
+  background: #fff;
+  border-color: #fff;
+}
+#app .container .content .page-second .payment-selection .selection .payment-box.active .checkbox i {
+  display: block;
+}
+#app .container .content .page-second .payment-selection .selection .payment-box .checkbox {
+  height: 19px;
+  width: 19px;
+  border-radius: 5px;
+  border: 1px solid #969696;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app .container .content .page-second .payment-selection .selection .payment-box .checkbox i {
+  font-size: 14px;
+  display: none;
+  color: #9447fd;
+}
+#app .container .content .page-second .payment-selection .selection .payment-box span {
+  padding-left: 15px;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  color: #0f0f0f;
+}
+#app .container .content .page-second .payment-confirm {
+  width: 100%;
+  margin: 35px auto;
+}
+#app .container .content .page-second .payment-confirm button {
+  padding: 6px 3px;
+  border: 1px solid #672dca;
+  background: #9447fd;
+  border-radius: 20px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  color: #fff;
+  width: 225px;
+  margin: auto;
+  margin-bottom: 15px;
+}
+#app .container .content .page-second .payment-confirm button:hover {
+  background: #672dca;
+}
+
+::selection {
+  color: #fff;
+  background-color: #9447fd;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 798px) {
+  #app.dashboard .ads-list .ads-create {
+    width: 100%;
+  }
+  #app.dashboard .ads-list .ads-create form {
+    width: 100%;
+  }
+  #app.dashboard .ads-list .ads-create form div p {
+    font-size: 15px;
+  }
+  #app.dashboard .ads-list .ads {
+    width: 100%;
+  }
+  #app.dashboard .ads-list .ads .ad {
+    width: 100%;
+  }
+  #app.dashboard .orders-list .order {
+    width: calc(100% - 16px);
+  }
+  #app.dashboard .orders-list .order .left {
+    display: none;
+  }
+  #app.dashboard .orders-list .order .right {
+    gap: 8px;
+  }
+  #app.dashboard .orders-list .order .right div span {
+    font-size: 12px;
+  }
+  #app .banners-slider {
+    width: calc(100% - 32px);
+  }
+  #app .container {
+    width: calc(100% - 64px);
+  }
+  #app .container .content .user_info {
+    width: calc(100% - 32px);
+  }
+  #app .container .content .page-first {
+    width: calc(100% - 16px);
+  }
+  #app .container .content .page-second .payment-value {
+    width: 100%;
+  }
+  #app .container .content .page-second .payment-value input {
+    width: 100%;
+  }
+  #app .container .content .page-second .payment-selection {
+    width: 100%;
+  }
+  #app .container .content .page-second .payment-selection .selection {
+    grid-template-columns: repeat(1, 2fr);
+    width: 100%;
+  }
+}
+.success-popup {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 256px;
+  width: 356px;
+  background: #9447fd;
+  border-radius: 4px;
+  margin: auto;
+  padding: 16px;
+}
+.success-popup .top {
+  margin-bottom: 8px;
+}
+.success-popup .top h2 {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 500;
+  text-align: center;
+}
+.success-popup p {
+  color: #0f0f0f;
+  font-weight: 500;
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+.success-popup .row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.success-popup .row span {
+  background: rgba(255, 255, 255, 0.1254901961);
+  border-radius: 99px;
+  margin-right: 8px;
+  color: #fff;
+  font-weight: 500;
+  padding: 0 9px;
+  font-size: 13px;
+}
+
+@media screen and (max-width: 798px) {
+  .success-popup {
+    width: calc(100% - 32px);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
